@@ -4,35 +4,15 @@ package wordspacemodels;
 public class Main {
     
     public static void main(String[] args) throws Exception{
-        
-        //String folder = ""; 
-        String inputFile = "";
-        String outputFile = "";
-        String vectorSize= "";
-                    
-        if(args.length == 0){
-             inputFile = "../Already_Standard.txt";
-             outputFile = "../RandomIndexed_Standard.txt";
-             vectorSize = "1000";
-        }
-        else if(args.length == 1){
-             inputFile = args[0];
-             outputFile = "RandomIndexed_"+args[0]+".txt";
-             vectorSize = "1000";
-        } 
-        else if(args.length == 2){
-             inputFile = args[0];
-             outputFile = "RandomIndexed_"+args[0]+".txt";
-             vectorSize = args[1];
-             
-        }
+   
+        // Define text file to process and name of output file
+        // Define vector size. IF vector size set to 1000; cubicroot(1000*unique words) -> 0.1% collision
+        String inputFile = "Data/Standard.txt";
+        String outputFile = "Data/RandomIndexed.txt";
+        String vectorSize = "1000";
         
         RandomIndexingFunction.randomIndexing(inputFile, outputFile, vectorSize);
-                
-                
-                
-                
-                
+                     
         
     }
     
